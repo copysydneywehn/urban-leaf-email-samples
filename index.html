@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sydney Wehn - Work Samples</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            padding: 60px 20px;
+            color: white;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #ff6b9d;
+            font-size: 48px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 60px;
+        }
+        
+        .folder-grid {
+            display: grid;
+            gap: 30px;
+        }
+        
+        .folder {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid #4ecdc4;
+            border-radius: 8px;
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+        
+        .folder:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #ff6b9d;
+            transform: translateY(-3px);
+        }
+        
+        .folder h2 {
+            font-size: 32px;
+            color: white;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 600;
+        }
+        
+        .folder-icon {
+            color: #4ecdc4;
+            font-size: 36px;
+        }
+        
+        .folder-description {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        .samples-list {
+            list-style: none;
+        }
+        
+        .samples-list li {
+            margin-bottom: 15px;
+        }
+        
+        .samples-list a {
+            color: #4ecdc4;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s ease;
+            padding: 10px 0;
+        }
+        
+        .samples-list a:hover {
+            color: #ff6b9d;
+            padding-left: 10px;
+        }
+        
+        .samples-list a::before {
+            content: "→";
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        .back-link {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .back-link a {
+            color: #4ecdc4;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .back-link a:hover {
+            color: #ff6b9d;
+        }
+        
+        .coming-soon {
+            opacity: 0.5;
+            cursor: default;
+        }
+        
+        .coming-soon:hover {
+            color: #4ecdc4;
+            padding-left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Work Samples</h1>
+        <p class="subtitle">Copywriting & Email Marketing</p>
+        
+        <div class="folder-grid">
+            <div class="folder">
+                <h2>
+                    <span class="folder-icon">📁</span>
+                    Urban Leaf
+                </h2>
+                <p class="folder-description">
+                    Email marketing campaign samples for Urban Leaf dispensary in NYC. 
+                    Each email focuses on storytelling, clear CTAs, and conversion optimization.
+                </p>
+                <ul class="samples-list">
+                    <li><a href="/urban-leaf/valentines-love-beans.html">Valentine's Day - Love Beans</a></li>
+                    <li><a href="#" class="coming-soon">Valentine's Day - Flower (Coming Soon)</a></li>
+                    <li><a href="#" class="coming-soon">Tasteful Tuesday - Weekly Deal (Coming Soon)</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="back-link">
+            <a href="https://sydneywehn.com">← Back to main site</a>
+        </div>
+    </div>
+</body>
+</html>
