@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sydney Wehn - Work Samples</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
@@ -12,11 +14,11 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+            font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #F5F4E4;
             min-height: 100vh;
             padding: 60px 20px;
-            color: white;
+            color: rgba(0, 0, 0, 0.53);
         }
         
         .container {
@@ -25,39 +27,61 @@
         }
         
         h1 {
-            color: #ff6b9d;
-            font-size: 48px;
-            margin-bottom: 10px;
+            color: rgba(0, 0, 0, 0.53);
+            font-size: 56px;
+            margin-bottom: 12px;
             text-align: center;
             font-weight: 700;
+            letter-spacing: -1px;
         }
         
         .subtitle {
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(72, 90, 250, 0.75);
             text-align: center;
-            font-size: 18px;
-            margin-bottom: 60px;
+            font-size: 19px;
+            margin-bottom: 70px;
+            font-weight: 500;
         }
         
         .folder-grid {
             display: grid;
-            gap: 20px;
+            gap: 24px;
         }
         
         .folder {
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid #4ecdc4;
-            border-radius: 8px;
+            background: white;
+            border: 2px solid rgba(72, 90, 250, 0.15);
+            border-radius: 20px;
             overflow: hidden;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(72, 90, 250, 0.06);
+            position: relative;
+        }
+        
+        .folder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, rgba(72, 90, 250, 0.4), rgba(72, 90, 250, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .folder:hover::before {
+            opacity: 1;
         }
         
         .folder:hover {
-            border-color: #ff6b9d;
+            border-color: rgba(72, 90, 250, 0.3);
+            box-shadow: 0 8px 30px rgba(72, 90, 250, 0.12);
+            transform: translateY(-4px);
         }
         
         .folder-header {
-            padding: 30px 40px;
+            padding: 35px 40px;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -66,31 +90,31 @@
         }
         
         .folder-header:hover {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(72, 90, 250, 0.02);
         }
         
         .folder-title-section {
             display: flex;
             align-items: center;
-            gap: 15px;
         }
         
         .folder h2 {
             font-size: 32px;
-            color: white;
+            color: rgba(0, 0, 0, 0.53);
             margin: 0;
-            font-weight: 600;
-        }
-        
-        .folder-icon {
-            color: #4ecdc4;
-            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
         
         .expand-icon {
-            color: #4ecdc4;
-            font-size: 24px;
-            transition: transform 0.3s ease;
+            color: rgba(72, 90, 250, 0.6);
+            font-size: 22px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .folder:hover .expand-icon {
+            color: rgba(72, 90, 250, 0.9);
         }
         
         .folder.expanded .expand-icon {
@@ -109,6 +133,7 @@
         
         .folder-inner {
             padding: 0 40px 40px 40px;
+            background: linear-gradient(180deg, rgba(72, 90, 250, 0.02) 0%, rgba(255, 255, 255, 0) 100%);
         }
         
         .samples-list {
@@ -116,30 +141,37 @@
         }
         
         .samples-list li {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
         }
         
         .samples-list a {
-            color: #4ecdc4;
+            color: rgba(72, 90, 250, 0.75);
             text-decoration: none;
             font-weight: 500;
-            font-size: 18px;
+            font-size: 17px;
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
             padding: 10px 0;
+            border-radius: 8px;
         }
         
         .samples-list a:hover {
-            color: #ff6b9d;
+            color: rgba(72, 90, 250, 1);
             padding-left: 10px;
+            background: rgba(72, 90, 250, 0.04);
         }
         
         .samples-list a::before {
             content: "→";
             font-weight: bold;
             font-size: 20px;
+            transition: transform 0.2s ease;
+        }
+        
+        .samples-list a:hover::before {
+            transform: translateX(4px);
         }
         
         .back-link {
@@ -148,17 +180,18 @@
         }
         
         .back-link a {
-            color: #4ecdc4;
+            color: rgba(72, 90, 250, 0.7);
             text-decoration: none;
             font-size: 16px;
             transition: color 0.2s ease;
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            font-weight: 500;
         }
         
         .back-link a:hover {
-            color: #ff6b9d;
+            color: rgba(72, 90, 250, 0.9);
         }
     </style>
 </head>
@@ -172,7 +205,6 @@
             <div class="folder">
                 <div class="folder-header">
                     <div class="folder-title-section">
-                        <span class="folder-icon">📁</span>
                         <h2>Urban Leaf</h2>
                     </div>
                     <span class="expand-icon">▶</span>
@@ -192,7 +224,6 @@
             <div class="folder">
                 <div class="folder-header">
                     <div class="folder-title-section">
-                        <span class="folder-icon">📁</span>
                         <h2>Daphne</h2>
                     </div>
                     <span class="expand-icon">▶</span>
@@ -212,7 +243,6 @@
             <div class="folder">
                 <div class="folder-header">
                     <div class="folder-title-section">
-                        <span class="folder-icon">📁</span>
                         <h2>Jones Road Beauty</h2>
                     </div>
                     <span class="expand-icon">▶</span>
@@ -231,7 +261,6 @@
             <div class="folder">
                 <div class="folder-header">
                     <div class="folder-title-section">
-                        <span class="folder-icon">📁</span>
                         <h2>Nite Nectar</h2>
                     </div>
                     <span class="expand-icon">▶</span>
