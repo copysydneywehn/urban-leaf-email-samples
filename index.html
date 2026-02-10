@@ -128,12 +128,75 @@
         }
         
         .folder.expanded .folder-content {
-            max-height: 1000px;
+            max-height: 3000px;
         }
         
         .folder-inner {
             padding: 0 40px 40px 40px;
             background: linear-gradient(180deg, rgba(72, 90, 250, 0.02) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+        
+        /* Nested folder styles */
+        .nested-folder {
+            background: rgba(72, 90, 250, 0.03);
+            border: 1.5px solid rgba(72, 90, 250, 0.12);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+        
+        .nested-folder:last-child {
+            margin-bottom: 0;
+        }
+        
+        .nested-folder-header {
+            padding: 20px 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.2s ease;
+        }
+        
+        .nested-folder-header:hover {
+            background: rgba(72, 90, 250, 0.06);
+        }
+        
+        .nested-folder h3 {
+            font-size: 22px;
+            color: rgba(0, 0, 0, 0.53);
+            margin: 0;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
+        
+        .nested-expand-icon {
+            color: rgba(72, 90, 250, 0.5);
+            font-size: 18px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .nested-folder:hover .nested-expand-icon {
+            color: rgba(72, 90, 250, 0.8);
+        }
+        
+        .nested-folder.expanded .nested-expand-icon {
+            transform: rotate(90deg);
+        }
+        
+        .nested-folder-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .nested-folder.expanded .nested-folder-content {
+            max-height: 800px;
+        }
+        
+        .nested-folder-inner {
+            padding: 0 24px 20px 24px;
         }
         
         .samples-list {
@@ -198,82 +261,107 @@
 <body>
     <div class="container">
         <h1>Work Samples</h1>
-        <p class="subtitle">Copywriting & Email Marketing</p>
+        <p class="subtitle">Email Copy & Technical Writing</p>
         
         <div class="folder-grid">
-            <!-- Urban Leaf Folder -->
+            <!-- Email Copy with Design - Main Folder -->
             <div class="folder">
                 <div class="folder-header">
                     <div class="folder-title-section">
-                        <h2>Urban Leaf</h2>
+                        <h2>Email Copy with Design</h2>
+                    </div>
+                    <span class="expand-icon">▶</span>
+                </div>
+                <div class="folder-content">
+                    <div class="folder-inner">
+                        
+                        <!-- Urban Leaf Nested Folder -->
+                        <div class="nested-folder">
+                            <div class="nested-folder-header">
+                                <h3>Urban Leaf</h3>
+                                <span class="nested-expand-icon">▶</span>
+                            </div>
+                            <div class="nested-folder-content">
+                                <div class="nested-folder-inner">
+                                    <ul class="samples-list">
+                                        <li><a href="/email-copy-with-design/urban_leaf/valentines-love-beans.html">Love beans: because chocolate and cannabis are the ultimate power couple ❤️</a></li>
+                                        <li><a href="/email-copy-with-design/urban_leaf/valentines-flower.html">Romance isn't dead, it's high</a></li>
+                                        <li><a href="/email-copy-with-design/urban_leaf/tasteful-tuesday.html">Tuesday just got tastier (and cheaper)</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Daphne Nested Folder -->
+                        <div class="nested-folder">
+                            <div class="nested-folder-header">
+                                <h3>Daphne</h3>
+                                <span class="nested-expand-icon">▶</span>
+                            </div>
+                            <div class="nested-folder-content">
+                                <div class="nested-folder-inner">
+                                    <ul class="samples-list">
+                                        <li><a href="/email-copy-with-design/daphne/first-order-dreamier.html">Your first order just got dreamier ✨</a></li>
+                                        <li><a href="/email-copy-with-design/daphne/why-i-started-daphne.html">Why I started Daphne (it involves my cat)</a></li>
+                                        <li><a href="/email-copy-with-design/daphne/free-embroidery-valentines.html">Free embroidery ends Thursday 💌</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Jones Road Beauty Nested Folder -->
+                        <div class="nested-folder">
+                            <div class="nested-folder-header">
+                                <h3>Jones Road Beauty</h3>
+                                <span class="nested-expand-icon">▶</span>
+                            </div>
+                            <div class="nested-folder-content">
+                                <div class="nested-folder-inner">
+                                    <ul class="samples-list">
+                                        <li><a href="/email-copy-with-design/jones_road/find-your-products.html">Find your 2-3 products in 60 seconds</a></li>
+                                        <li><a href="/email-copy-with-design/jones_road/walked-away.html">I walked away from my own brand</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Nite Nectar Nested Folder -->
+                        <div class="nested-folder">
+                            <div class="nested-folder-header">
+                                <h3>Nite Nectar</h3>
+                                <span class="nested-expand-icon">▶</span>
+                            </div>
+                            <div class="nested-folder-content">
+                                <div class="nested-folder-inner">
+                                    <ul class="samples-list">
+                                        <li><a href="/email-copy-with-design/nite_nectar/good-habits-goodi.html">Good habits start with Goodi</a></li>
+                                        <li><a href="/email-copy-with-design/nite_nectar/new-favorite-nightcap.html">Your new favorite nightcap (no hangover required)</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Writing - Main Folder -->
+            <div class="folder">
+                <div class="folder-header">
+                    <div class="folder-title-section">
+                        <h2>Technical Writing</h2>
                     </div>
                     <span class="expand-icon">▶</span>
                 </div>
                 <div class="folder-content">
                     <div class="folder-inner">
                         <ul class="samples-list">
-                            <li><a href="/urban_leaf/valentines-love-beans.html">Love beans: because chocolate and cannabis are the ultimate power couple ❤️</a></li>
-                            <li><a href="/urban_leaf/valentines-flower.html">Romance isn't dead, it's high</a></li>
-                            <li><a href="/urban_leaf/tasteful-tuesday.html">Tuesday just got tastier (and cheaper)</a></li>
+                            <li><a href="https://docs.google.com/document/d/1SXTBk1CInKZdQKV-1KaE2e9Q9V7KRQU5biwxarWKW1k/edit?usp=sharing" target="_blank">AI Agents: What They Actually Are (And Why They're Not As Scary As The Headlines Make Them Sound)</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- Daphne Folder -->
-            <div class="folder">
-                <div class="folder-header">
-                    <div class="folder-title-section">
-                        <h2>Daphne</h2>
-                    </div>
-                    <span class="expand-icon">▶</span>
-                </div>
-                <div class="folder-content">
-                    <div class="folder-inner">
-                        <ul class="samples-list">
-                            <li><a href="/daphne/first-order-dreamier.html">Your first order just got dreamier ✨</a></li>
-                            <li><a href="/daphne/why-i-started-daphne.html">Why I started Daphne (it involves my cat)</a></li>
-                            <li><a href="/daphne/free-embroidery-valentines.html">Free embroidery ends Thursday 💌</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Jones Road Beauty Folder -->
-            <div class="folder">
-                <div class="folder-header">
-                    <div class="folder-title-section">
-                        <h2>Jones Road Beauty</h2>
-                    </div>
-                    <span class="expand-icon">▶</span>
-                </div>
-                <div class="folder-content">
-                    <div class="folder-inner">
-                        <ul class="samples-list">
-                            <li><a href="/jones_road/find-your-products.html">Find your 2-3 products in 60 seconds</a></li>
-                            <li><a href="/jones_road/walked-away.html">I walked away from my own brand</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Nite Nectar Folder -->
-            <div class="folder">
-                <div class="folder-header">
-                    <div class="folder-title-section">
-                        <h2>Nite Nectar</h2>
-                    </div>
-                    <span class="expand-icon">▶</span>
-                </div>
-                <div class="folder-content">
-                    <div class="folder-inner">
-                        <ul class="samples-list">
-                            <li><a href="/nite_nectar/good-habits-goodi.html">Good habits start with Goodi</a></li>
-                            <li><a href="/nite_nectar/new-favorite-nightcap.html">Your new favorite nightcap (no hangover required)</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
         </div>
         
         <div class="back-link">
@@ -282,9 +370,18 @@
     </div>
 
     <script>
-        // Add click handlers to all folder headers
+        // Main folder expand/collapse
         document.querySelectorAll('.folder-header').forEach(header => {
             header.addEventListener('click', function() {
+                const folder = this.parentElement;
+                folder.classList.toggle('expanded');
+            });
+        });
+
+        // Nested folder expand/collapse
+        document.querySelectorAll('.nested-folder-header').forEach(header => {
+            header.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent triggering parent folder
                 const folder = this.parentElement;
                 folder.classList.toggle('expanded');
             });
